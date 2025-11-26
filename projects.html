@@ -13,25 +13,31 @@
    RIGHT-SIDE UI BUTTONS (BMI + PROJECT BUTTON LIST)
 -------------------------------------------------- */
 
-/* Project Button List (Under BMI) */
+/* Updated Project Buttons Container */
 #project-buttons {
-  position: fixed;
-  top: 180px;
-  right: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 8x;
+  position: relative; /* remove fixed positioning */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+  gap: 12px;
+  justify-items: center; /* center buttons in grid cells */
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1200px;
   z-index: 9999;
 }
 
-.project-button {
-  width: 130px;
+/* Buttons */
+.project-button,
+.bmi-button {
+  width: 100%; /* fill the grid cell */
+  min-width: 130px;
+  max-width: 180px;
   background: #3498db;
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 6px 12px;
-  font-size: 0.75rem;
+  padding: 8px 12px;
+  font-size: 0.85rem;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -39,81 +45,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
-.project-button:hover {
-  background: #E056FD;
-  transform: scale(1.05);
-}
-
-  
-/* BMI Button */
-.bmi-button {
-  position: fixed;
-  top: 100px;
-  right: 40px;
-  background: #3498db;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 8px 12px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
+.project-button:hover,
 .bmi-button:hover {
   background: #E056FD;
   transform: scale(1.05);
 }
 
 .bmi-button i {
-  font-size: 1rem;
+  margin-right: 6px;
 }
 
-/* --------------------------------------------------
-   RESPONSIVE (MOBILE)
--------------------------------------------------- */
-@media (max-width: 768px) {
-  .bmi-button {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 1rem auto;
-    transform: none;
+/* Responsive: fewer columns on smaller screens */
+@media (max-width: 1024px) {
+  #project-buttons {
+    grid-template-columns: repeat(3, 1fr);
   }
-
-  .waterfall {
-    width: 100%;
-    height: 350px;
-  }
-
-  .phase {
-    width: 120px;
-    height: 60px;
-    font-size: 0.8rem;
-  }
-
-  /* Adjusted mobile SDLC positions */
-  .req { top: 20px; left: 10px; }
-  .des { top: 100px; left: 120px; }
-  .dev { top: 180px; left: 230px; }
-  .test { top: 260px; left: 340px; }
-  .dep { top: 340px; left: 450px; }
-  .maint { top: 420px; left: 560px; }
-
-  .arrow1 { top: 70px; left: 100px; }
-  .arrow2 { top: 150px; left: 210px; }
-  .arrow3 { top: 230px; left: 320px; }
-  .arrow4 { top: 310px; left: 430px; }
-  .arrow5 { top: 390px; left: 540px; }
 }
+
+@media (max-width: 600px) {
+  #project-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 </style>
 
@@ -170,13 +127,11 @@
   <button class="project-button" onclick="window.location.href='https://kryanbz.github.io/FoC/ascii.html'">ASCII Converter</button>
   <button class="project-button" onclick="window.location.href='https://kryanbz.github.io/FoC/unicode.html'">UNICODE</button>
   <button class="project-button" onclick="window.location.href='https://kryanbz.github.io/FoC/MLinstructions.html'">Machine Lang</button>
+  <button class="project-button" onclick="window.location.href='SDLC.html'">SDLC</button>
+<button class="bmi-button" onclick="window.location.href='BMI.html'"><i>⚖️</i> BMI Calculator</button>
 </div>
 
-   <!-- BMI Calculator Button -->
-      <button class="bmi-button" onclick="window.location.href='BMI.html'">
-        <i>⚖️</i> BMI Calculator
-      </button>
-
+ 
       <footer class="subpage-footer">
         © Powered by UB — 2025
       </footer>
@@ -189,6 +144,7 @@
 
 </body>
 </html>
+
 
 
 
