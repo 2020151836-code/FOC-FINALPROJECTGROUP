@@ -222,134 +222,6 @@ body {
   position: fixed;
   height: 100vh;
   overflow-y: auto;
-}
-
-.sidebar h2 {
-  font-size: 1.5rem;
-  color: #c9a8ff;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.sidebar-nav a {
-  color: #5ac8fa;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  display: block;
-}
-
-.sidebar-nav a:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transform: translateX(5px);
-}
-
-.sidebar-nav a.active {
-  background: linear-gradient(to right, #9b5eff, #5b8cff);
-  color: #fff;
-}
-
-.main-content {
-  margin-left: 250px;
-  flex: 1;
-  padding: 40px;
-}
-
-.content-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.content-header h1 {
-  font-size: 2.5rem;
-  background: linear-gradient(to right, #9f8cff, #5ac8fa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
-}
-
-.featured-image {
-  max-width: 700px;
-  width: 100%;
-  border-radius: 15px;
-  margin: 30px auto;
-  display: block;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-}
-
-.content-text {
-  text-align: center;
-  margin: 30px 0;
-  font-size: 1.1rem;
-  color: #c8bfff;
-}
-
-.content-text a {
-  color: #5ac8fa;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.content-text a:hover {
-  color: #9f8cff;
-}
-
-/* Subpage Footer */
-.subpage-footer {
-  text-align: center;
-  padding: 30px;
-  margin-top: 60px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #a88cff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .main-content {
-    margin-left: 0;
-    padding: 20px;
-  }
-  
-  .subpage-layout {
-    flex-direction: column;
-  }
-}
-
-/* Subpage Layout */
-.subpage-layout {
-  display: flex;
-  min-height: 100vh;
-}
-
-.sidebar {
-  width: 250px;
-  background: rgba(30, 12, 71, 0.95);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px 20px;
-  position: fixed;
-  height: 100vh;
-  overflow-y: auto;
   backdrop-filter: blur(10px);
 }
 
@@ -389,16 +261,23 @@ body {
   color: #fff;
 }
 
+/* UPDATED: Main content - centered vertically */
 .main-content {
   margin-left: 250px;
   flex: 1;
   padding: 40px;
   max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* UPDATED: Content header with spacing */
 .content-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 3rem;
 }
 
 .content-header h1 {
@@ -457,10 +336,11 @@ body {
   color: #9f8cff;
 }
 
+/* UPDATED: Subpage footer with spacing */
 .subpage-footer {
   text-align: center;
   padding: 30px;
-  margin-top: 60px;
+  margin-top: 3rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #a88cff;
 }
@@ -578,13 +458,6 @@ body::before {
   box-shadow: 0 15px 50px rgba(90, 200, 250, 0.45);
 }
 
-.content-header {
-  text-align: center;
-  margin-bottom: 40px;
-  opacity: 1;
-}
-
-
 .sdlc-container {
   display: flex;
   justify-content: center;
@@ -593,26 +466,37 @@ body::before {
   transform: translateX(-60px); /* moves it 60px left visually */
 }
 
-INSERTT TODAY HERE 26/11
+/* UPDATED: Project buttons grid layout (centered) */
+#project-buttons {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  justify-items: center;
+  width: 90%;
+  max-width: 1200px;
+  z-index: 9999;
+}
+
+/* UPDATED: Project button styles */
 .project-button {
-  position: fixed;
-  right: 20px;
+  width: 100%;
+  min-width: 130px;
+  max-width: 180px;
   background: #3498db;
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 10px 16px;
-  font-size: 0.9rem;
+  padding: 8px 12px;
+  font-size: 0.85rem;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  z-index: 100;
   display: flex;
-  align-items: center;
-  gap: 6px;
-  width: 180px;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .project-button:hover {
@@ -620,15 +504,19 @@ INSERTT TODAY HERE 26/11
   transform: scale(1.05);
 }
 
-/* Stack buttons vertically under BMI */
-#project-buttons {
-  position: fixed;
-  top: 60%;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transform: translateY(-50%);
+.bmi-button i {
+  margin-right: 6px;
 }
 
+/* Responsive: fewer columns on smaller screens */
+@media (max-width: 1024px) {
+  #project-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
+@media (max-width: 600px) {
+  #project-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
