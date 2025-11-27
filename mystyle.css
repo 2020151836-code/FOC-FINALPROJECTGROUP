@@ -520,3 +520,35 @@ body::before {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+/* Dev Team Icon Styling */
+.dev-team-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.student-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.student-icon:hover {
+  transform: scale(1.1);
+}
+
+.dev-team-icons a p {
+  font-weight: 700;
+  text-align: center;
+  margin-top: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+
